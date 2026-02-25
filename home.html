@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxusio | Redefining Luxury Mobility</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body {
+            background: linear-gradient(135deg, #0a0f1f, #050814, #0d1326);
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        .intro {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 2s ease forwards 2s;
+        }
+        .intro h1 {
+            font-size: 40px;
+            letter-spacing: 6px;
+            color: #d4af37;
+            animation: zoomIn 2s ease forwards;
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0,0,0,0.85);
+            position: sticky;
+            top: 0;
+        }
+        nav h1 { font-size: 24px; letter-spacing: 2px; }
+        nav a { text-decoration: none; color: #f5f5f5; margin-left: 30px; font-size: 14px; }
+        nav a:hover { color: #d4af37; }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1502877338535-766e1452684a');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        header h2 { font-size: 50px; margin-bottom: 20px; letter-spacing: 3px; }
+        header p { font-size: 18px; max-width: 600px; margin-bottom: 30px; color: #ddd; }
+
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover { background: #d4af37; color: #000; box-shadow: 0 0 20px #d4af37; }
+
+        section { padding: 80px 60px; }
+        h3 { font-size: 32px; margin-bottom: 40px; text-align: center; color: #d4af37; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: #111827; border-radius: 15px; overflow: hidden; transition: 0.4s; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.6); }
+
+        footer { text-align: center; padding: 30px; background: #000; color: #aaa; }
+
+        .sound-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #d4af37;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        @media(max-width:768px){
+            nav { padding: 20px; }
+            section { padding: 60px 20px; }
+            header h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="intro">
+    <h1>LUXUSIO</h1>
+</div>
+
+<nav>
+    <h1>LUXUSIO</h1>
+    <div>
+        <a href="models.html">Models</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<header>
+    <h2>Redefining Luxury Mobility</h2>
+    <p>Experience the fusion of performance, innovation, and timeless elegance with Luxusio's premium automobile lineup.</p>
+    <a class="btn" onclick="playSound()">Start Engine</a>
+</header>
+
+<section id="models">
+    <h3>Our Models</h3>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Luxusio X1">
+            <div class="card-content">
+                <h4>Luxusio X1</h4>
+                <p>Luxury SUV with hybrid performance and cutting-edge technology.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" alt="Luxusio GT">
+            <div class="card-content">
+                <h4>Luxusio GT</h4>
+                <p>High-performance sports coupe engineered for ultimate driving thrill.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Luxusio E-Lux">
+            <div class="card-content">
+                <h4>Luxusio E-Lux</h4>
+                <p>Fully electric sedan combining sustainability with premium comfort.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h3>About Luxusio</h3>
+    <p style="max-width:800px;margin:auto;text-align:center;color:#ccc;">
+        Luxusio is a visionary automobile brand committed to redefining luxury and performance.
+        With a passion for innovation and craftsmanship, we create vehicles that deliver
+        unparalleled driving experiences while embracing the future of sustainable mobility.
+    </p>
+</section>
+
+<section id="contact">
+    <h3>Contact Us</h3>
+    <p style="text-align:center;color:#ccc;">Email: contact@luxusio.com | Phone: +1 234 567 890</p>
+</section>
+
+<footer>
+    © 2026 Luxusio Automobile Brand. All Rights Reserved.
+</footer>
+
+<!-- Engine Sound -->
+<audio id="engineSound" src="https://www.soundjay.com/mechanical/sounds/car-start-1.mp3"></audio>
+
+<!-- <div class="sound-control" onclick="toggleSound()">Help</div> -->
+
+<script>
+    const audio = document.getElementById('engineSound');
+    function playSound() {
+        audio.play();
+    }
+    function toggleSound() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+</script>
+
+</body>
+</html>
